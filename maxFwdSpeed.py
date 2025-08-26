@@ -22,9 +22,3 @@ def calculate_max_forward_speed(power_output_kw, efficiency=0.85, drag_coefficie
     # Solve for v: v = (2 * P / (Cd * A * rho)) ** (1/3)
     v_max = (2 * power_watts / (drag_coefficient * frontal_area_m2 * air_density_kgm3)) ** (1/3)
     return v_max
-
-if __name__ == "__main__":
-    power_output_kw = float(input("Enter powerpack power output (kW): "))
-    speed_mps = calculate_max_forward_speed(power_output_kw)
-    speed_kph = speed_mps * 3.6
-    print(f"Maximum forward speed: {speed_mps:.2f} m/s ({speed_kph:.2f} km/h)")
